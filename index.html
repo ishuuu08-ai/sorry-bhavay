@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +8,10 @@
 <style>
 body{
 margin:0;
-font-family: Arial, sans-serif;
-overflow:hidden;
-background:#fff0f5;
+font-family:Arial;
 text-align:center;
+overflow:hidden;
+transition:background 0.5s;
 }
 
 .slide{
@@ -22,183 +22,137 @@ box-sizing:border-box;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-animation: fadeSlide 0.8s ease;
+animation:fadeIn 0.8s ease;
 }
 
 .active{
 display:flex;
 }
 
-@keyframes fadeSlide{
-from{opacity:0; transform:translateY(30px);}
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
 to{opacity:1; transform:translateY(0);}
 }
 
 button{
-margin-top:30px;
 padding:12px 25px;
 font-size:18px;
 border:none;
 border-radius:25px;
 cursor:pointer;
-background:#ff4d6d;
-color:white;
-transition:0.3s;
+margin-top:25px;
+background:white;
+font-weight:bold;
 }
 
-button:hover{
-transform:scale(1.1);
-}
+/* 🌸 Slide Colors */
+#slide1{background:#ffc0cb; color:red;}
+#slide2{background:#87ceeb; color:#003366;}
+#slide3{background:#e6ccff; color:#660066;}
+#slide4{background:#ffe6cc; color:#cc5200;}
+#slide5{background:#d9b3ff; color:#4b0082;}
+#slide6{background:#fffacd; color:#b8860b;}
+#slide7{background:#ccffcc; color:#006400;}
+#slide8{background:#ffd9ec; color:#c71585;}
 
-#slide1{
-background:#ffc0cb;
-color:red;
-}
-
-/* Floating Emojis */
 .floating{
 position:fixed;
 font-size:30px;
-animation:floatUp 4s linear forwards;
+animation:floatUp 3s linear forwards;
 z-index:9999;
 pointer-events:none;
 }
 
 @keyframes floatUp{
-0%{transform:translateY(100vh) scale(1); opacity:1;}
-100%{transform:translateY(-10vh) scale(1.5); opacity:0;}
+0%{transform:translateY(100vh); opacity:1;}
+100%{transform:translateY(-10vh); opacity:0;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- MUSIC -->
 <audio id="bgMusic" loop>
 <source src="piche-tere.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Slide 1 -->
 <div class="slide active" id="slide1">
-<h1>Baby I am really sorry for these 3 days 🥺</h1>
-<p>But I want you to know that I really do care 🤍<br>
-And I’m really hurt because I hurted you 💔</p>
-<button onclick="nextSlide('💋')">Click for Love 💘</button>
+<h2>Baby I am really sorry for these 3 days 🥺</h2>
+<p>I really do care 🤍<br>I’m hurt because I hurted you 💔</p>
+<button onclick="goNext('💋')">Click for Love 💘</button>
 </div>
 
-<!-- Slide 2 -->
 <div class="slide" id="slide2">
-<h1>There’s been 3 years of us together 🫶🏻</h1>
-<p>You know we can’t live without each other 🥺❤️<br>
-We are each other’s habit, comfort and home 🏡💞</p>
-<button onclick="nextSlide('❤️')">Fix This 💖</button>
+<h2>3 years of us 🫶🏻</h2>
+<p>We can’t live without each other ❤️</p>
+<button onclick="goNext('❤️')">Fix This 💖</button>
 </div>
 
-<!-- Slide 3 -->
 <div class="slide" id="slide3">
-<h1>Maaf kare aur paaye Ishu ke sath zindagi bitaane ka moka 🥺🌸💍</h1>
-<p>
-Narazgi bhi tumhari pyaari lagti hai 😔<br>
-Par dooriyan bilkul nahi 💔<br>
-Gussa thoda kam karo na baby 🫶🏻<br>
-Ishu ko phir se apna lo na 🌹
-</p>
-<button onclick="nextSlide('🫶🏻')">Forgive Me?? 🥹</button>
+<h2>Maaf kare 🥺🌸</h2>
+<p>Narazgi cute hai but dooriyan nahi 💔</p>
+<button onclick="goNext('🫶🏻')">Forgive Me 🥹</button>
 </div>
 
-<!-- Slide 4 -->
 <div class="slide" id="slide4">
-<h1>If you forgive me 🥺</h1>
-<p>
-10000 kisses 😘<br>
-100 cuddles 🤗<br>
-Infinite love ♾️❤️
-</p>
-<button onclick="nextSlide('🌹')">Pighal Jao 🫠</button>
+<h2>10000 kisses 😘</h2>
+<p>Infinite love ♾️❤️</p>
+<button onclick="goNext('🌹')">Pighal Jao 🫠</button>
 </div>
 
-<!-- Slide 5 -->
 <div class="slide" id="slide5">
-<p>
-Mene apko bhot hurt kiya 💔<br>
-Par mai apka baby hu na 🥺<br><br>
-
-Mene apko bhot preshan kiya 😔<br>
-Par ap bhi to krte ho na 🥹<br><br>
-
-Mene apko disrespect kiya<br>
-Par aaj ke baad kabhi nahi karungi ❤️<br><br>
-
-Mene apko bhot humiliate kiya<br>
-Par ab kabhi nahi hoga 🙏🏻
-</p>
-<button onclick="nextSlide('💜')">Sorry 🥺</button>
+<h2>I am sorry 💜</h2>
+<p>I promise I will not hurt you again</p>
+<button onclick="goNext('💜')">Sorry</button>
 </div>
 
-<!-- Slide 6 -->
 <div class="slide" id="slide6">
-<p>
-See baby my cutu 🥹<br>
-I really want to fix this because I see my future with you 💍❤️<br><br>
-
-Jo jo baatein tune boli mene saari suni 🤍<br>
-I will fix this for you and we will make it work 💞<br><br>
-
-We will make few promises and love each other more 🌹<br>
-I am sorry for whatever happened 💔
-</p>
-<button onclick="nextSlide('🥹')">Promises? 🤞🏻</button>
+<h2>I see my future with you 🥹</h2>
+<p>We will fix everything together ❤️</p>
+<button onclick="goNext('🥹')">Promises?</button>
 </div>
 
-<!-- Slide 7 -->
 <div class="slide" id="slide7">
-<p>
-Promise we will fix this 🤍<br>
-Promise we will share every problem 🥺<br>
-Promise no disrespect ❌<br>
-Promise we will love deeply ❤️<br>
-Promise you will be with me always ♾️<br><br>
-
-I love you my jaan my baby my world 🌹🫶🏻<br>
-I am really sorry 🫶🏻
-</p>
-<button onclick="nextSlide('🌸')">Surprise 🎁</button>
+<h2>Always Together 🌸</h2>
+<p>I love you my jaan ❤️</p>
+<button onclick="goNext('🌸')">Surprise 🎁</button>
 </div>
 
-<!-- Slide 8 -->
 <div class="slide" id="slide8">
-<h1>I MISS YOU 🫶🏻💔</h1>
-<h1>I AM SORRY 🫶🏻🌹</h1>
+<h1>I MISS YOU 🎀</h1>
+<h1>I AM SORRY 🎀</h1>
 <button onclick="celebrate('🎀')">Forever 💞</button>
 </div>
 
 <script>
-let current = 1;
-let musicStarted = false;
+let current=1;
+let total=8;
+let musicStarted=false;
 
-function nextSlide(emoji){
+function goNext(emoji){
 
 if(!musicStarted){
 document.getElementById("bgMusic").play();
-musicStarted = true;
+musicStarted=true;
 }
 
 celebrate(emoji);
 
+if(current<total){
 document.getElementById("slide"+current).classList.remove("active");
 current++;
 document.getElementById("slide"+current).classList.add("active");
 }
+}
 
 function celebrate(emoji){
-for(let i=0;i<35;i++){
+for(let i=0;i<25;i++){
 let el=document.createElement("div");
-el.classList.add("floating");
+el.className="floating";
 el.innerHTML=emoji;
 el.style.left=Math.random()*100+"vw";
-el.style.animationDuration=(Math.random()*3+2)+"s";
 document.body.appendChild(el);
-setTimeout(()=>el.remove(),4000);
+setTimeout(()=>el.remove(),3000);
 }
 }
 </script>
