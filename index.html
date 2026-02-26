@@ -7,10 +7,28 @@
 
 <style>
 body{
-margin:0;
-font-family:Arial;
-text-align:center;
-overflow:hidden;
+  margin:0;
+  font-family:Arial;
+  text-align:center;
+}
+
+.slide{
+  display:none;
+  min-height:100vh;
+  padding:60px 20px;
+  box-sizing:border-box;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  animation:fade 0.8s ease;
+}
+
+.active{
+  display:flex;
+}
+
+h1,h2,p{
+  max-width:800px;
 }
 
 .slide{
@@ -155,3 +173,4 @@ setTimeout(()=>el.remove(),3000);
 
 </body>
 </html>
+
