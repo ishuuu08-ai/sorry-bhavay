@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Bhavay ❤️</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  text-align:center;
+}
+
+.slide{
+  display:none;
+  min-height:100vh;
+  padding:60px 20px;
+  box-sizing:border-box;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  animation:fade 0.8s ease;
+}
+
+.active{
+  display:flex;
+}
+
+@keyframes fade{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+button{
+  padding:12px 25px;
+  font-size:18px;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+  margin-top:25px;
+  background:white;
+  font-weight:bold;
+}
+
+h1,h2,p{
+  max-width:800px;
+}
+
+/* Slide Colors */
+#slide1{background:#ffc0cb; color:red;}
+#slide2{background:#87ceeb; color:#003366;}
+#slide3{background:#e6ccff; color:#660066;}
+#slide4{background:#ffe6cc; color:#cc5200;}
+#slide5{background:#d9b3ff; color:#4b0082;}
+#slide6{background:#fffacd; color:#b8860b;}
+#slide7{background:#ccffcc; color:#006400;}
+#slide8{background:#ffd9ec; color:#c71585;}
+
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="high-on-you.mp3" type="audio/mpeg">
+</audio>
+
+<div class="slide active" id="slide1">
+<h2>Baby I am really sorry for these 3 days 🥺</h2>
+<p>But I want you to know that I really do care 🤍<br>
+And I’m really hurt because I hurted you 💔</p>
+<button onclick="next('💋')">Click for Love 💘</button>
+</div>
+
+<div class="slide" id="slide2">
+<h2>There’s been 3 years of us together 🫶🏻</h2>
+<p>You know we can’t live without each other 🥺❤️<br>
+We are each other’s habit, comfort and home 🏡💞</p>
+<button onclick="next('❤️')">Fix This 💖</button>
+</div>
+
+<div class="slide" id="slide3">
+<h2>Maaf kare aur paaye Ishu ke sath zindagi bitaane ka moka 🥺🌸💍</h2>
+<p>
+Narazgi bhi tumhari pyaari lagti hai 😔<br>
+Par dooriyan bilkul nahi 💔<br>
+Gussa thoda kam karo na baby 🫶🏻<br>
+Ishu ko phir se apna lo na 🌹
+</p>
+<button onclick="next('🫶🏻')">Forgive Me?? 🥹</button>
+</div>
+
+<div class="slide" id="slide4">
+<h2>If you are forgiving me then I will give you</h2>
+<p>
+10000 kisses 😘<br>
+100 cuddles 🤗<br>
+And infinite of my love ♾️❤️
+</p>
+<button onclick="next('🌹')">Pighal Jao 🫠</button>
+</div>
+
+<div class="slide" id="slide5">
+<p>
+Mene apko bhot hurt kiya 💔<br>
+Par mai apka baby hu na 🥺🫶🏻<br><br>
+
+Mene apko bhot preshan kiya 😔<br>
+Par ap bhi to krte ho na 🥹<br><br>
+
+Mene apko disrespect kiya pr aaj k baad kbhi ni krungi ❤️<br><br>
+
+Mene apko bhot humilite kia pr ab kbhi ni hoga 🙏🏻
+</p>
+<button onclick="next('💜')">Sorry</button>
+</div>
+
+<div class="slide" id="slide6">
+<p>
+See baby my cutu 🥹🫶🏻<br>
+I really want to fix this because i see my future with you 💍❤️<br><br>
+
+Jo jo batein tune boli mene saari suni 🤍<br>
+I will fix this for you and we will make it work 💞<br><br>
+
+We will make few promises to each other and love each other more 🌹<br>
+I am sorry for whatever happened 💔
+</p>
+<button onclick="next('🥹')">Promises?</button>
+</div>
+
+<div class="slide" id="slide7">
+<p>
+Promise that you will fix this with me 🤍<br>
+Promise that you will tell every problem to me 🥺<br>
+Promise we will never disrespect ❌<br>
+Promise we will love each other very much ❤️<br>
+Promise you will be with me always ♾️<br><br>
+
+I love you my jaan my baby my world my sab kuch 🌹🫶🏻<br>
+I am really sorry 🫶🏻
+</p>
+<button onclick="next('🌸')">Surprise</button>
+</div>
+
+<div class="slide" id="slide8">
+<h1>I MISS YOU 🎀</h1>
+<h1>I AM SORRY 🎀</h1>
+<button onclick="celebrate('🎀')">Forever 💞</button>
+</div>
+
+<script>
+let current=1;
+let total=8;
+let musicStarted=false;
+
+function next(emoji){
+
+  if(!musicStarted){
+    document.getElementById("bgMusic").play();
+    musicStarted=true;
+  }
+
+  celebrate(emoji);
+
+  if(current<total){
+    document.getElementById("slide"+current).classList.remove("active");
+    current++;
+    document.getElementById("slide"+current).classList.add("active");
+  }
+}
+
+function celebrate(emoji){
+  for(let i=0;i<30;i++){
+    let el=document.createElement("div");
+    el.innerHTML=emoji;
+    el.style.position="fixed";
+    el.style.left=Math.random()*100+"vw";
+    el.style.top="100vh";
+    el.style.fontSize="30px";
+    el.style.zIndex="9999";
+    el.style.transition="all 3s linear";
+    document.body.appendChild(el);
+
+    setTimeout(()=>{
+      el.style.top="-10vh";
+      el.style.opacity="0";
+    },50);
+
+    setTimeout(()=>{
+      el.remove();
+    },3000);
+  }
+}
+</script>
+
+</body>
+</html>
