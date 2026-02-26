@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Bhavay ❤️</title>
+
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+text-align: center;
+overflow: hidden;
+background: #fff0f5;
+}
+
+.slide {
+display: none;
+height: 100vh;
+padding: 40px;
+box-sizing: border-box;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.active {
+display: flex;
+}
+
+button {
+margin-top: 30px;
+padding: 12px 25px;
+font-size: 18px;
+border: none;
+border-radius: 25px;
+cursor: pointer;
+background: #ff4d6d;
+color: white;
+transition: 0.3s;
+}
+
+button:hover {
+transform: scale(1.1);
+}
+
+#slide1 {
+background: #ffc0cb;
+color: red;
+}
+
+.hearts {
+position: absolute;
+font-size: 25px;
+animation: float 4s linear infinite;
+}
+
+@keyframes float {
+from { transform: translateY(100vh); opacity: 1; }
+to { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+<source src="piche-tere.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Slide 1 -->
+<div class="slide active" id="slide1">
+<h1>Baby I am really sorry for these 3 days 🥺</h1>
+<p>But I want you to know that I really do care 🤍<br>
+And I’m really hurt because I hurted you 💔</p>
+<button onclick="nextSlide()">Click for Love 💘</button>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide" id="slide2">
+<h1>There’s been 3 years of us together 🫶🏻</h1>
+<p>You know we can’t live without each other 🥺❤️<br>
+We are each other’s habit, comfort and home 🏡💞</p>
+<button onclick="nextSlide()">Fix This 💖</button>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide" id="slide3">
+<h1>Maaf kare aur paaye Ishu ke sath zindagi bitaane ka moka 🥺🌸💍</h1>
+<p>
+Narazgi bhi tumhari pyaari lagti hai 😔<br>
+Par dooriyan bilkul nahi 💔<br>
+Gussa thoda kam karo na baby 🫶🏻<br>
+Ishu ko phir se apna lo na 🌹
+</p>
+<button onclick="nextSlide()">Forgive Me?? 🥹</button>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide" id="slide4">
+<h1>If you forgive me 🥺</h1>
+<p>
+10000 kisses 😘<br>
+100 cuddles 🤗<br>
+Infinite love ♾️❤️
+</p>
+<button onclick="nextSlide()">Pighal Jao 🫠</button>
+</div>
+
+<!-- Slide 5 -->
+<div class="slide" id="slide5">
+<p>
+Mene apko bhot hurt kiya 💔<br>
+Par mai apka baby hu na 🥺<br><br>
+
+Mene apko bhot preshan kiya 😔<br>
+Par ap bhi to krte ho na 🥹<br><br>
+
+Mene apko disrespect kiya<br>
+Par aaj ke baad kabhi nahi karungi ❤️<br><br>
+
+Mene apko bhot humiliate kiya<br>
+Par ab kabhi nahi hoga 🙏🏻
+</p>
+<button onclick="nextSlide()">Sorry 🥺</button>
+</div>
+
+<!-- Slide 6 -->
+<div class="slide" id="slide6">
+<p>
+See baby my cutu 🥹<br>
+I really want to fix this because I see my future with you 💍❤️<br><br>
+
+Jo jo baatein tune boli mene saari suni 🤍<br>
+I will fix this for you and we will make it work 💞<br><br>
+
+We will make few promises and love each other more 🌹<br>
+I am sorry for whatever happened 💔
+</p>
+<button onclick="nextSlide()">Promises? 🤞🏻</button>
+</div>
+
+<!-- Slide 7 -->
+<div class="slide" id="slide7">
+<p>
+Satva vachan jo hum lenge shadi ke baad 💍<br><br>
+
+Promise we will fix this 🤍<br>
+Promise we will share every problem 🥺<br>
+Promise no disrespect ❌<br>
+Promise we will love deeply ❤️<br>
+Promise you will be with me always ♾️<br><br>
+
+I love you my jaan my baby my world 🌹🫶🏻<br>
+I am really sorry 🫶🏻
+</p>
+<button onclick="nextSlide(); showHearts()">Surprise 🎁</button>
+</div>
+
+<!-- Slide 8 -->
+<div class="slide" id="slide8">
+<h1>I MISS YOU 🫶🏻💔</h1>
+<h1>I AM SORRY 🫶🏻🌹</h1>
+</div>
+
+<script>
+let current = 1;
+let musicStarted = false;
+
+function nextSlide() {
+
+if (!musicStarted) {
+document.getElementById("bgMusic").play();
+musicStarted = true;
+}
+
+document.getElementById("slide" + current).classList.remove("active");
+current++;
+document.getElementById("slide" + current).classList.add("active");
+}
+
+function showHearts() {
+for (let i = 0; i < 30; i++) {
+let heart = document.createElement("div");
+heart.classList.add("hearts");
+heart.innerHTML = "💋";
+heart.style.left = Math.random() * 100 + "vw";
+heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+document.body.appendChild(heart);
+setTimeout(() => heart.remove(), 4000);
+}
+}
+</script>
+
+</body>
+</html>
